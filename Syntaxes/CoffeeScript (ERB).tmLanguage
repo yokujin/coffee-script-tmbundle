@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>comment</key>
+	<string>CoffeeScript Syntax: version 1 (with embedded eRuby)</string>
+	<key>fileTypes</key>
+	<array>
+		<string>coffee.erb</string>
+	</array>
+	<key>foldingStartMarker</key>
+	<string>.*(-&gt;|=&gt;)\s*$|.*[\[{]\s*$</string>
+	<key>foldingStopMarker</key>
+	<string>^\s*$|^\s*[}\]]\s*$</string>
+	<key>keyEquivalent</key>
+	<string>^~C</string>
+	<key>name</key>
+	<string>CoffeeScript (ERB)</string>
+	<key>patterns</key>
+	<array>
+		<dict>
+			<key>begin</key>
+			<string>&lt;%+#</string>
+			<key>captures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.comment.erb</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>%&gt;</string>
+			<key>name</key>
+			<string>comment.block.erb</string>
+		</dict>
+		<dict>
+			<key>begin</key>
+			<string>&lt;%+(?!&gt;)[-=]?</string>
+			<key>captures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.section.embedded.ruby</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>-?%&gt;</string>
+			<key>name</key>
+			<string>source.ruby.rails.erb</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.comment.ruby</string>
+						</dict>
+					</dict>
+					<key>match</key>
+					<string>(#).*?(?=-?%&gt;)</string>
+					<key>name</key>
+					<string>comment.line.number-sign.ruby</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>source.ruby.rails</string>
+				</dict>
+			</array>
+		</dict>
+		<dict>
+			<key>include</key>
+			<string>source.coffee</string>
+		</dict>
+	</array>
+	<key>scopeName</key>
+	<string>source.coffee.rails</string>
+	<key>uuid</key>
+	<string>7A316D32-7313-4F7A-94BA-CD67FA3D1E81</string>
+</dict>
+</plist>
